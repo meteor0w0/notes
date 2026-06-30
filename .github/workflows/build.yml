@@ -1,0 +1,16 @@
+name: build and deploy
+on: push
+
+jobs:
+    build:
+        name: Convert notes to HTML
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo Build start
+
+    deploy:
+        name: Deploy to Cloudflare Workers
+        needs: build
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo Deploy start
